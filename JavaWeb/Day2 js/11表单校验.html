@@ -1,0 +1,99 @@
+<!DOCTYPE heml>
+<html>
+	<head>
+		<title>注册校验 </title>
+		<script>
+			function showTips(spanId,msg){
+				var span = document.getElementById(spanId);
+				span.innerHTML=msg;
+			}
+			
+			
+			function checkName(){
+				//获取用户输入的内容
+				var nameV=document.getElementById("name").value;
+				//获得要显示结果的span
+				var span = document.getElementById("span_name");
+				
+				if(nameV.length<2){
+					span.innerHTML="<font color='red' size='2'>太短</font>";
+					return false;
+				}else{
+					span.innerHTML="<font color='red' size='2'>可用</font>";
+					return true;
+				}
+				
+			}
+			
+			
+			
+			
+			function checkPassword(){
+				//获取用户输入的内容
+				var passwordV = document.getElementById("password").value;
+				//获得要显示结果的span
+				var span = document.getElementById("span_password");
+				
+				if(passwordV.length<4){
+					span.innerHTML="<font color='red' size='2'>太短</font>";
+					return false;
+				}else{
+					span.innerHTML="<font color='red' size='2'>可用</font>";
+					return true;
+				}
+			}
+			
+			
+			function checkRePassword(){
+				//获取用户输入的内容
+				var repasswordV = document.getElementById("repassword").value;
+				//获得要显示结果的span
+				var span = document.getElementById("span_repassword");
+				
+				var passwordVV = document.getElementById("password").value;
+				
+				if(passwordVV != repasswordV){
+					span.innerHTML="<font color='red' size='2'>有误</font>";
+					return false;
+				}else{
+					span.innerHTML="";
+					return true;
+				}
+			}
+			
+			function checkForm(){
+			
+				var flag = checkName()&&checkPassword()&&checkRePassword();
+				return flag;
+			}
+			
+		</script>
+	
+	</head>
+	
+	<body>
+	<form action = "09轮播动画.html" onsubmit="return checkForm()">
+		用户名：<input type ="text" id ="name" 
+			onfocus="showTips('span_name','请输入2位以上')" 
+			onblur="checkName()" 
+			onkeyup="checkName()"/>
+			<span id = "span_name"></span><br/>
+		
+		密码：<input type ="password" id="password" 
+			onfocus="showTips('span_password','请输入4位以上密码')" 
+			onblur="checkPassword()" 
+			onkeyup="checkPassword()"/>
+			<span id = "span_password"></span><br/>
+		
+		确认密码：<input type ="password" id="repassword" 
+			onfocus="showTips('span_repassword','两次密码必须一致')" 
+			onblur="checkRePassword()" 
+			onkeyup="checkRePassword()"/>
+			<span id = "span_repassword"></span><br/>
+		
+		手机号：<input type ="text" id="number"/>
+			
+		<input type="submit" value="提交"/>
+	</form>
+	</body>
+</html>

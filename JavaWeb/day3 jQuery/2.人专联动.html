@@ -1,0 +1,51 @@
+<DOSTYPE html>
+<html>
+	<head>
+		<title>人专联动</title>
+		<script src = "js\jquery-1.8.3.js"></script>
+		<script >
+			$(function(){
+				var albums = new Array(3);
+				albums[0]=new Array("寒武纪","新房客","香奈儿","彼岸花");
+				albums[1]=new Array("耿耿于怀","念念不忘","罗生门","单鱼座");
+				albums[2]=new Array("绝","垃圾","破相","漩涡");
+				
+				
+				$("#singer").change(function(){
+					$("#album").empty();//清除下拉列表的值
+					var val = this.value;//获取值
+					//遍历获取
+					$.each(albums,function(i,j){
+						if(val==i){
+						$.each(albums[i],function(m,n){
+							var textNode = document.createTextNode(n);
+							var opEle = document.createElement("option");
+							$(opEle).append(textNode);
+							$(opEle).appendTo("#album");
+						});	
+
+						}						
+					});			
+				});				
+			});
+		</script>
+	</head>
+	
+	<body>
+		<table>
+			<tr>
+				<td>
+					<select id = "singer">
+						<option>请选择</option>
+						<option value = "0">寓言</option>
+						<option value = "1">十年三部曲</option>
+						<option value = "2">垃圾五部曲（少1）</option>
+					</select>
+					
+					<select id = "album"> </select>
+				</td>
+			</tr>
+		</table>
+	
+	</body>
+</html>

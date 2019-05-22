@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> 商品选择</title>
+		<script>
+			function secectOne(){
+				//获取左边的元素
+				var leftSelect = document.getElementById("leftSelect");
+				//获取所有选项成为数组
+				var options =leftSelect.options;
+				var rightSelect=document.getElementById("rightSelect");
+				
+				for(var i =0;i<options.length;i++){
+					var option1 = options[i];
+					if(option1.selected){
+						rightSelect.appendChild(option1);
+					}
+				}
+			
+			}
+			
+			
+			function selectAll(){
+				var leftSelect = document.getElementById("leftSelect");
+				var options =leftSelect.options;
+				var rightSelect=document.getElementById("rightSelect");
+				for(var i = options.length-1;i>=0;i--){
+					var option1=options [i];
+					rightSelect.appendChild(option1);
+				}
+				
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<table border = "1px" width="300px" >
+			<tr>
+				<td>name</td>
+				<td>
+					<input type= "text" value = "album"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>describe</td>
+				<td><input type= "text" value = "albums we can find"/></td>
+			</tr>
+			
+			<tr>
+				<td>divide by weather own</td>
+				<td>
+					<div style = "float:left;">
+						已有版权</br>
+						<select multiple = "multiple" id="leftSelect" ondblclick="secectOne()">
+							<option>尘埃落定</option>
+							<option>不吐不快</option>
+							<option>衬</option>
+							<option>我本人</option>
+						</select>
+						<br/>
+						<a href = "#" onclick = "secectOne()"> &gt;&gt; </a><br/>
+						<a href = "#" onclick = "selectAll()"> &gt;&gt;&gt; </a>
+					</div>
+				
+				</td>
+				<td>
+					<div style = "float:right;">
+						未有版权</br>
+						<select multiple = "multiple" id="rightSelect">
+							<option>绝</option>
+							<option>独活</option>
+							<option>无声占有</option>
+							<option>16号爱人</option>
+						</select>
+						<br/>
+						<a href = "#" >&lt;&lt;</a><br/>
+						<a href = "#" >&lt;&lt;&lt;</a>
+					
+					</div>
+				
+				</td>
+				
+			</tr>
+		</table>
+	
+	</body>
+</html>

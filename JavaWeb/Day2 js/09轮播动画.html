@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<script>
+			var indexa= 0;
+			function changeImg(){
+				var img=document.getElementById("img1");
+				var index=indexa%10+1;
+				img.src = "img\\"+index+".jpg";
+				indexa=indexa+1;
+			}
+			
+			function init(){
+				setInterval("changeImg()",100);
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<img src= "img\1.jpg" width ="20%" id="img1";/>
+	</body>
+</html>

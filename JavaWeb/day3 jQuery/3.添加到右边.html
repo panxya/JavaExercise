@@ -1,0 +1,101 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title> </title>
+		<script src="js/jquery-1.8.3.js"></script>
+		
+		<script>
+			$(function(){
+				$("#selectOneToRight").click(function(){
+					$("#leftSelect option:selected").appendTo($("#rightSelect"));
+				});
+				
+				$("#selectAllToRight").click(function(){
+					$("#leftSelect option").appendTo($("#rightSelect"));
+				});
+				
+				$("#leftSelect option").dblclick(function(){
+				
+					$("#leftSelect option:selected").appendTo($("#rightSelect"));
+				});
+			
+				
+				
+				$("#selectOneToLeft").click(function(){
+					$("#rightSelect option:selected").appendTo($("#leftSelect"));
+				});
+				
+				$("#selectAllToLeft").click(function(){
+					$("#rightSelect option").appendTo($("#leftSelect"));
+				});
+				
+				$("#rightSelect option").dblclick(function(){
+				
+					$("#rightSelect option:selected").appendTo($("#leftSelect"));
+				});
+			
+			
+			
+			
+			});
+			
+			
+		</script>
+	</head>
+	
+	<body>
+	
+	
+	<table border = "1px" width="600px"  >
+			<tr>
+				<td>name</td>
+				<td>
+					<input type= "text" value = "album      "/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>describe</td>
+				<td><input type= "text" value = "albums we can find      "/></td>
+			</tr>
+			
+			<tr>
+				<td>divide by weather own</td>
+				<td>
+					<span style = "float:left;">
+						已有版权</br>
+						<select multiple = "multiple" id="leftSelect" style = "height:200px;width:100px">
+							<option>尘埃落定</option>
+							<option>不吐不快</option>
+							<option>婚纱背后</option>
+							<option>披星戴月</option>
+							<option>曼珠沙华</option>
+						</select>
+						<br/>
+						<p><a href ="#" id="selectOneToRight"> &gt;&gt; </a></p><br/>
+						<p><a href ="#" id="selectAllToRight"> &gt;&gt;&gt; </a></p>
+					</span>
+				
+				
+					<span style = "float:right;" >
+						未有版权</br>
+						<select multiple = "multiple" id="rightSelect" style = "height:200px;width:100px">
+							<option>绝</option>
+							<option>漩涡</option>
+							<option>过客别墅</option>
+							<option>16号爱人</option>
+							<option>我本人</option>
+							
+						</select>
+						<br/>
+						<p><a href = "#" id="selectOneToLeft">&lt;&lt;</a></p><br/>
+						<p><a href = "#" id="selectAllToLeft">&lt;&lt;&lt;</a></p>
+					
+					</span>
+				
+				</td>
+				
+			</tr>
+		</table>
+	</body>
+</html>

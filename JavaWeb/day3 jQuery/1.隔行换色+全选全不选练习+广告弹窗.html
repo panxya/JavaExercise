@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<title> </title>
+		<script type = "text/javascript" src = "js\jquery-1.8.3.js"></script>
+		
+		<script>
+			
+			//隔行变色
+			$(function(){
+				$("tbody tr:odd").css("background-color","85c95a");
+			});
+		//全选全不选
+			$(function(){
+				$("#selAll").click(function(){
+					$("tbody input").attr("checked",this.checked);
+				
+				});	
+			});
+		
+			$(function(){
+				time = setInterval("showAdd()",1000);	
+				
+			});
+			
+			
+			function showAdd(){
+				$("#img").fadeIn(1000);
+			
+				clearInterval(time);
+				time = setInterval("delAdd()",1000);
+			}
+			
+			function delAdd(){
+				$("#img").fadeOut(1000);
+				clearInterval(time);
+			}
+
+				</script>
+	</head>
+	
+	<body>
+	<img src="3.jpg" id = "img" width="40%" style="display: none"/>
+
+	<table id = "tab"  width ="600px" align="center" id = "tab">
+		
+
+		<thead>
+			<tr>
+					<td colspan="9"><input type="button"  value="添加"/>
+					<input type="button"  value="删除"/></td>
+					
+			</tr>
+				<tr>
+					<td>
+						<input type="checkbox"  id="selAll"/>
+					</td>
+					<td>专辑名</td>
+					<td>价格</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+					<input type="checkbox" id="selOne" />
+					</td>
+					<td>伟大的渺小</td>
+					<td>22</td>
+				</tr>
+				
+				<tr>
+					<td>
+					<input type="checkbox" id="selOne" />
+					</td>
+					<td>gorgeous</td>
+					<td>20</td>
+				</tr>
+				
+				<tr>
+					<td>
+					<input type="checkbox" id="selOne" />
+					</td>
+					<td>问世</td>
+					<td>0</td>
+				</tr>
+				
+				<tr>
+					<td>
+					<input type="checkbox" id="selOne" />
+					</td>
+					<td>四春季</td>
+					<td>0</td>
+				</tr>
+				
+				<tr>
+					<td>
+					<input type="checkbox"  id="selOne"/>
+					</td>
+					<td>秋分</td>
+					<td>0</td>
+				</tr>
+				
+				<tr>
+					<td>
+					<input type="checkbox" id="selOne" />
+					</td>
+					<td>寒武纪</td>
+					<td>10</td>
+				</tr>
+			<tbody>
+		</table>
+	
+		
+	</body>
+</html>

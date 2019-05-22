@@ -1,0 +1,81 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>selected all</title>
+	<script>
+		function init() {
+			var table = document.getElementById("tab");
+			var rows = table.rows;
+			for(var i = 1;i<rows.length;i++){
+				var row= rows[i];
+				if(i%2!=0){
+					row.bgColor="85c95a";
+				}else{
+					row.bgColor="ffffff";
+				}
+			}
+		}
+		
+		function selectAll() {
+			var selAll = document.getElementById("selAll");
+			var checked = selAll.checked;
+			
+			var checkes = document.getElementsByName("checkone");
+			for(var i=0;i<checkes.length;i++){
+				var checkone = checkes[i];
+				checkone.checked=checked;
+			}
+			
+		}
+		
+		
+	</script>
+	
+	</head>
+	
+	<body onload="init()">
+		<table id = "tab"  width ="600px">
+			<tr>
+				<td>
+					<input type="checkbox" onclick="selectAll()" id="selAll"/>
+				</td>
+				<td>专辑名</td>
+				<td>价格</td>
+			</tr>
+			
+			<tr>
+				<td>
+				<input type="checkbox" name="checkone" />
+				</td>
+				<td>伟大的渺小</td>
+				<td>22</td>
+			</tr>
+			
+			<tr>
+				<td>
+				<input type="checkbox" name="checkone" />
+				</td>
+				<td>gorgeous</td>
+				<td>20</td>
+			</tr>
+			
+			<tr>
+				<td>
+				<input type="checkbox" name="checkone" />
+				</td>
+				<td>问世</td>
+				<td>0</td>
+			</tr>
+			
+			<tr>
+				<td>
+				<input type="checkbox" name="checkone" />
+				</td>
+				<td>四春季</td>
+				<td>0</td>
+			</tr>
+			
+		</table>
+	
+	</body>
+</html>

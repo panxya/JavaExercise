@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title> I'm a watcher</title>
+	</head>
+	
+	<body>
+		<div id = "divid"> </div>
+		<script type = "text/javascript">
+			function watcher() {
+				var date = new Date();
+				var d1 = date.toLocaleString();
+				var div1 = document.getElementById("divid");
+				
+				div1.innerHTML=d1;
+			}
+			
+			setInterval("watcher();",1000);
+		</script>
+	</body>
+</html>

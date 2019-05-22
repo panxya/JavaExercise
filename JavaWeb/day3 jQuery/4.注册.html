@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title> </title>
+		<script  src="js/jquery-1.8.3.js"></script>
+		<script  src="js/jquery.validate.min.js"></script>
+		<script  src="js/messages_zh.js"></script>
+		
+		<script> 
+		$(function(){
+			$("#form").validate({
+				rules:{
+					
+					password:{
+						required:true,
+						digits:true,
+						minlength:3
+					},
+					repassword:{
+						required:true,
+						equalTo:"[name='password']"
+					},
+					username:{
+						required:true,
+						maxlength:5
+					}
+				
+				},
+			
+				message:{
+					
+					password:{
+						required:"不能为空",
+						digits:"必须是整数",
+						minlength:"最少3位"
+					},
+					repassword:{
+						required:"不能为空",
+						equalTo:"最少3位"
+					},
+					username:{
+						required:"不能为空",
+						maxlength:"最少5位"
+					}
+				
+					
+				},
+				
+				errorElement:"label",
+				success:function(label){
+					label.text(" ").addClass("success");
+					
+					}
+				
+				
+			});
+		});
+		</script>
+	</head>
+	
+	<body>
+		<form action ="2.人专联动.htm"  id="form">
+			用户名:
+				<input type ="text" id ="name" name="username"/>
+				<span id = "span_name"></span><br/>
+			
+			密码:<input type ="password" id="password" name="password"/>
+				<span id = "span_password"></span><br/>
+			
+			确认密码：<input type ="password" id="repassword" name="repassword"//>
+				<span id = "span_repassword"></span><br/>
+			
+			电话：<input type ="text" id="number"/>
+				
+			<input type="submit" value="确认"/>
+		</form>
+	
+	</body>
+</html>

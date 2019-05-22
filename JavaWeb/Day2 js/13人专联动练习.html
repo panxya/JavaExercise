@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>人专联动</title>
+	<script>
+		var singers=[
+		["罗生门","秋分","单鱼座","耿耿于怀"],
+		["尘埃落定","春秋","衬"],
+		["弥敦道","无声占有","独活"]
+		];
+		
+		function selectSubordinate() {
+			//第一个列表
+			var singer = document.getElementById("Singer");
+			//得到选中的专辑
+			var value = singer.value;
+			//数组中取出对应的专辑信息
+			var albums = singers[value];
+			//第二个列表
+			var albumSelcct = document.getElementById("album");
+			//清空 更为简洁
+			albumSelcct.options.length=0;
+			
+			for(var i =0;i<albums.length;i++){
+				var albumText=albums[i];
+				//创建option结点
+				var option1 = document.createElement("option");
+				//创建专辑元素结点
+				var textNode = document.createTextNode(albumText);
+				//结点与文本关联
+				option1.appendChild(textNode);
+				albumSelcct.appendChild(option1);
+				
+				
+			
+			}
+		}
+	</script>
+	
+	</head>
+	
+	<body>
+		<select id="Singer" onchange="selectSubordinate()">
+			<option value="-1">请选择</option>
+			<option value="0">麦</option>
+			<option value="1">张</option>
+			<option value="2">洪</option>
+		</select>
+		<select id="album"></select>
+		
+	
+	</body>
+</html>

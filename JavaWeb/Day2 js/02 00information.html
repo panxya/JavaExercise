@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>infromation</title>
+	</head>
+		
+	<body>
+		<table border ="1" bordercolor = "blue" cellspacing = "0">
+			<tr>
+				<td>操作</td>
+				<td>姓名</td>
+				<td>年龄</td>
+			</tr>
+			<tr>
+			
+				<td><input type="button" value ="输入" onclick = "s1('林林','22');"/> </td>
+				<td>林林</td>
+				<td>22</td>
+			</tr>
+			<tr>
+				<td> <input type="button" value ="输入" onclick = "s1('霖霖','21');"/></td>
+				<td>霖霖</td>
+				<td>21</td>
+			</tr>
+			<tr>
+				<td> <input type="button" value ="输入" onclick = "s1('琳琳','11');"/></td>
+				<td>琳琳</td>
+				<td>11</td>
+			</tr>
+		
+		</table>
+		
+		<script = "text/javascript">
+			function s1(name1,age1) {
+				var pwin = window.opener;
+				pwin.document.getElementById("name").value = name1;
+				pwin.document.getElementById("age").value = age1;
+				window.close();
+			
+			}
+		
+		</script>
+		
+	</body>
+	
+	
+</html>
