@@ -1,0 +1,7 @@
+Here is the information of Student.
+name,Chinese,Math,English
+≈À≈À,278,99,89
+¡ÿ¡ÿ,66,23,88
+¡‹¡‹,26,66,77
+¡÷¡÷,22,34,55
+¡’¡’,22,33,44

@@ -1,0 +1,42 @@
+package d08_03triangular_arrays;
+
+/**
+ * This program demonstrates a tringular array.
+ * 
+ * @author ะกั๎
+ * @version V1.3
+ */
+public class LotteryArrays {
+	public static void main(String[] args) {
+		final int MAX = 10;
+		// allocate triangular array
+		int[][] odds = new int[MAX + 1][];
+		for (int n = 0; n <= MAX; n++) {
+			odds[n] = new int[n+1];
+		}
+		
+		
+		for (int n = 0; n < odds.length; n++) {
+			for (int k = 0; k < odds[n].length; k++) {
+				/*
+				 * compute binominal coefficient n*N-1...
+				 */
+				int lotteryOdds = 1;
+				for (int i = 1; i <= k; i++) {
+					lotteryOdds = lotteryOdds * (n - i + 1) / i;
+				}
+				odds[n][k] = lotteryOdds;
+			}
+		}
+
+		// print triangular array
+		for (int[] row : odds) {
+			for (int odd : row) {
+				System.out.printf("%4d", odd);
+				
+			}
+			System.out.println();
+		}
+	}
+
+}
