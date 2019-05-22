@@ -1,2 +1,2 @@
 # JavaSEExercise
-学习javaSE时联系的代码。
+学习javaSE时练习的代码。
