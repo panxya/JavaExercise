@@ -1,4 +1,4 @@
-//数组的遍历
+//数组遍历
 
 class Array {
 	public static void main (String[] agrs) {
