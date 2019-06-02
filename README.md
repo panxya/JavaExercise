@@ -1,2 +1,2 @@
 # JavaExercise
-学习java时练习的代码。
+Record my exercise in java learning.
